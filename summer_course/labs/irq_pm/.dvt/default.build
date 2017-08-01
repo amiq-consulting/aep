@@ -1,0 +1,15 @@
+# Automatically identify and compile all the source files in the project directory.
+# DO NOT explicitly list files/directories in 'dvt_auto_init' sections. Use 'dvt_init' sections instead.
+
++dvt_setenv+UVM_HOME=/apps/amiq/dvt/predefined_projects/libs/uvm-1.2/
++define+INCA
+-uvm -sv
+
++incdir+rtl
++incdir+ve
++incdir+tb
+
+
+rtl/pattern_matcher.v
+ve/*.sv
+tb/irq_pattern_matcher_top.sv

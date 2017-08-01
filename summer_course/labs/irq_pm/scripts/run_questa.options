@@ -1,0 +1,25 @@
+-64
+-linedebug
+-cover bcesfx
+-sv
+-timescale 1ns/1ps
++UVM_NO_RELNOTES
++acc=a
+
++incdir+${PROJECT_HOME}
++incdir+${PROJECT_HOME}/rtl
++incdir+${PROJECT_HOME}/ve/tb
++incdir+${PROJECT_HOME}/ve/irq_pm/sv
++incdir+${PROJECT_HOME}/ve/irq_pm/test
++incdir+${PROJECT_HOME}/ve/irq_pm/sv/irq_pm_agent_config
++incdir+${PROJECT_HOME}/ve/irq_pm/sv/irq_pm_agent_in
++incdir+${PROJECT_HOME}/ve/irq_pm/sv/irq_pm_agent_out
+
+${PROJECT_HOME}/rtl/pattern_matcher.v
+${PROJECT_HOME}/ve/irq_pm/sv/irq_pm_agent_config/irq_pm_config_agent_pkg.sv
+${PROJECT_HOME}/ve/irq_pm/sv/irq_pm_agent_in/irq_pm_in_agent_pkg.sv
+${PROJECT_HOME}/ve/irq_pm/sv/irq_pm_agent_out/irq_pm_out_agent_pkg.sv
+${PROJECT_HOME}/ve/irq_pm/sv/irq_pm_pkg.sv
+${PROJECT_HOME}/ve/irq_pm/test/irq_pm_test_pkg.sv
+${PROJECT_HOME}/ve/tb/pattern_matcher_tb.sv
+

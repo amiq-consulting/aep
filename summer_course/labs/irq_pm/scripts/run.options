@@ -1,0 +1,26 @@
+-64bit
+-gui
+-access rwc
+-linedebug
+-coverage all
+-covoverwrite
+-uvm
+-sv
+-timescale 1ns/1ps
+
+// Project include directories
++incdir+${PROJECT_HOME}
++incdir+${PROJECT_HOME}/rtl
++incdir+${PROJECT_HOME}/ve/tb
++incdir+${PROJECT_HOME}/ve/irq_pm/sv
++incdir+${PROJECT_HOME}/ve/irq_pm/test
+
+// Compilation units
+${PROJECT_HOME}/rtl/*.v
+${PROJECT_HOME}/ve/irq_pm/sv/irq_pm_pkg.sv
+${PROJECT_HOME}/ve/irq_pm/test/irq_pm_test_pkg.sv
+${PROJECT_HOME}/ve/tb/*.v
+${PROJECT_HOME}/ve/tb/*.sv
+
+// Top module
+-top pattern_matcher_tb

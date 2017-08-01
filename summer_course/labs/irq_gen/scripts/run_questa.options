@@ -1,0 +1,16 @@
+-64
+-linedebug
+-cover bcesfx
+-sv
+-timescale 1ns/1ps
++UVM_NO_RELNOTES
++acc=a
+
++incdir+${PROJECT_HOME}
++incdir+${PROJECT_HOME}/rtl
++incdir+${PROJECT_HOME}/ve/
++incdir+${PROJECT_HOME}/tb
+
+${PROJECT_HOME}/rtl/irq_generator.v
+${PROJECT_HOME}/ve/*.sv
+${PROJECT_HOME}/tb/*.sv

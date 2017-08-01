@@ -1,0 +1,34 @@
+-64bit
+-coverage all
+-covoverwrite
+-covfile $PROJECT_HOME/scripts/coverage_config.ccf
+-access +rwc
+-linedebug
+-sv
+-uvm
+-timescale 1ns/1ps
+-disable_sem2009
++UVM_NO_RELNOTES
+
+// Project include directories
++incdir+${PROJECT_HOME}
++incdir+${PROJECT_HOME}/rtl
++incdir+${PROJECT_HOME}/ve/tb
++incdir+${PROJECT_HOME}/ve/irq_pm/sv
++incdir+${PROJECT_HOME}/ve/irq_pm/sv/irq_pm_agent_config
++incdir+${PROJECT_HOME}/ve/irq_pm/sv/irq_pm_agent_in
++incdir+${PROJECT_HOME}/ve/irq_pm/sv/irq_pm_agent_out
++incdir+${PROJECT_HOME}/ve/irq_pm/test
+
+// Compilation units
+${PROJECT_HOME}/rtl/*.v
+${PROJECT_HOME}/ve/irq_pm/sv/irq_pm_agent_config/irq_pm_config_agent_pkg.sv
+${PROJECT_HOME}/ve/irq_pm/sv/irq_pm_agent_in/irq_pm_in_agent_pkg.sv
+${PROJECT_HOME}/ve/irq_pm/sv/irq_pm_agent_out/irq_pm_out_agent_pkg.sv
+
+${PROJECT_HOME}/ve/irq_pm/sv/irq_pm_pkg.sv
+${PROJECT_HOME}/ve/irq_pm/test/irq_pm_test_pkg.sv
+${PROJECT_HOME}/ve/tb/*.sv
+
+// Top module
+-top pattern_matcher_tb

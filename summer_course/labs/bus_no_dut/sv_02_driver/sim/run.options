@@ -1,0 +1,14 @@
+-64bit
++incdir+${PROJ_HOME}
++incdir+${PROJ_HOME}/sv
+-sv
+-gui
+${PROJ_HOME}/sv/ex_top.sv
+-access rwc
+-linedebug
+-coverage all
+-covoverwrite
+-timescale 1ns/1ps
+-top ex_top
+
+

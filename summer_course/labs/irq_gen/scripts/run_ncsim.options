@@ -1,0 +1,37 @@
+-64bit
+-gui
+-access +rwc
+-linedebug
+-coverage all
+-covoverwrite
+-sv
+-uvm
+-timescale 1ns/1ps
+-disable_sem2009
++UVM_NO_RELNOTES
+
+//-uvmnoloaddpi
+
+// Project include directories
++incdir+${PROJECT_HOME}
++incdir+${PROJECT_HOME}/rtl
++incdir+${PROJECT_HOME}/ve/tb
++incdir+${PROJECT_HOME}/ve/irq_gen/sv
++incdir+${PROJECT_HOME}/ve/irq_gen/sv/irq_gen_config_agent
++incdir+${PROJECT_HOME}/ve/irq_gen/sv/irq_gen_input_agent
++incdir+${PROJECT_HOME}/ve/irq_gen/sv/irq_gen_irq_agent
++incdir+${PROJECT_HOME}/ve/irq_gen/test
+
+// Compilation units
+${PROJECT_HOME}/rtl/*.v
+${PROJECT_HOME}/ve/irq_gen/sv/irq_gen_config_agent/irq_gen_config_package.sv
+${PROJECT_HOME}/ve/irq_gen/sv/irq_gen_input_agent/irq_gen_input_package.sv
+${PROJECT_HOME}/ve/irq_gen/sv/irq_gen_irq_agent/irq_gen_irq_package.sv
+${PROJECT_HOME}/ve/irq_gen/sv/irq_gen_pkg.sv
+${PROJECT_HOME}/ve/irq_gen/test/irq_gen_test_pkg.sv
+${PROJECT_HOME}/ve/tb/*.sv
+
+
+// Top module
+-top top
+

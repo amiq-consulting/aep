@@ -1,0 +1,9 @@
+{signal: [
+  {name: 'clk', wave: 'P......|.........'},
+  {name: 'sop', wave: '010....|.........'},
+  {name: 'eop', wave: '0......|.......10'},
+  {name: 'valid', wave: '01..0..|.1......0'},
+  {name: 'data', wave: 'x333xxx|x3333333x'},
+  {name: 'error', wave: 'x......|.......2x'},
+
+]}

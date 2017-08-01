@@ -1,0 +1,30 @@
+session irq_gen_reg {
+	top_dir: "./regression";
+	output_mode: log_only;
+	pre_session_script: "$ENV(PROJECT_HOME)/scripts/compile_irun.sh";
+};
+
+group irq_gen_tests {
+	scan_script : "vm_scan.pl shell.flt ius.flt ovm_sv_lib.flt vm.flt";
+	run_script : "$ENV(PROJECT_HOME)/scripts/run_irun_regression.sh $ATTR(seed) $ATTR(top_files)";
+	timeout: 300;
+	
+	test irq_pm_longer_match_asserted_test {
+		top_files: "irq_pm_longer_match_asserted_test";
+		seed: random;
+		count: 5;
+	};
+	
+	test irq_pm_overflow_test {
+		top_files: "irq_pm_overflow_test";
+		seed: random;
+		count: 5;
+	};
+	
+	test irq_pm_random_test {
+		top_files: "irq_pm_random_test";
+		seed: random;
+		count: 5;
+	};
+
+};
