@@ -12,7 +12,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
  *******************************************************************************/
- 
+
 // state value definitions
 `define TX_STATE_WAIT 0
 `define TX_STATE_DATA_SR_1 1
@@ -68,8 +68,8 @@ module ex_p2s(
    assign crc[2] = buf_data[16] ^ buf_data[13] ^ buf_data[9] ^ buf_data[8] ^ buf_data[7] ^ buf_data[6] ^ buf_data[4] ^ buf_data[2] ^ buf_data[1] ^ initial_crc[0] ^ initial_crc[3];
    assign crc[3] = buf_data[14] ^ buf_data[10] ^ buf_data[9] ^ buf_data[8] ^ buf_data[7] ^ buf_data[5] ^ buf_data[3] ^ buf_data[2] ^ initial_crc[1];
    assign busy = (sr_has_data[0] && sr_has_data[1]);
-   
-   assign sdata = (tx_state == `TX_STATE_WAIT)?0:(tx_state == `TX_STATE_DATA_SR_1)?sr_1[23]:(tx_state == `TX_STATE_DATA_SR_2)?sr_2[23]:0;
+
+   assign sdata = (tx_state == `TX_STATE_WAIT)?0:(tx_state == `TX_STATE_DATA_SR_1)?sr_1[24]:(tx_state == `TX_STATE_DATA_SR_2)?sr_2[24]:0;
 
    // compute FSM's next state
    always@(tx_state or sr_has_data or sr_cnt) begin
@@ -111,7 +111,7 @@ module ex_p2s(
          tx_state <= tx_next_state;
    end
 
-   // bit counter 
+   // bit counter
    always@(posedge clk) begin
       if (!rst_n) begin
          sr_cnt <= 0;
@@ -135,11 +135,17 @@ module ex_p2s(
          case(tx_state)
             `TX_STATE_WAIT: begin
                if (cmd) begin
-                  sr_1 <= {4'hC, buf_data, crc};
-                  sr_has_data[0] <= 1;
+                  if (sr_has_data[0] == 0) begin
+                      sr_1 <= {4'hC, buf_data, crc};
+                      sr_has_data[0] <= 1;
+                  end else begin
+                      sr_2 <= {4'hC, buf_data, crc};
+                      sr_has_data[1] <= 1;
+                  end
                end else begin
                   sr_1 <= sr_1;
-                  sr_has_data[0] <= 0;
+                  sr_2 <= sr_2;
+                  sr_has_data <= 0;
                end
 
             end
