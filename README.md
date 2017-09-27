@@ -12,7 +12,9 @@ By sharing this information we aim to give a hand to those that want to learn ab
 All the materials can be downloaded from AMIQ's GitHub repo [aep repo](www.github.com/amiq-consulting/aep).
 ## aep Repo Structure
 The repo contains the following folders:
-    * doc - contains various AEP-related materials 
+    * doc - contains various AEP-related materials
+    * dvt - contains information on how to install and run the DVT IDE
+    * refcards - contains reference cards, cheat sheets or information on how to get them
     * summer_course - contains summer course materials
     * course - contains information on the full Pre-Silicon Functional Verification course as it is provided to the Faculty of Electronics, Telecommunications and Information Technology, Politechnica University of Bucharest.
 
