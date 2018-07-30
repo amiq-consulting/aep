@@ -1,0 +1,43 @@
+// ******************************************************************************
+// * (C) Copyright 2018 AMIQ Consulting SRL
+// * All rights reserved.
+// * NOTICE:  All information contained herein is, and remains
+// * the property of AMIQ Consulting SRL and its suppliers,
+// * if any.  The intellectual and technical concepts contained
+// * herein are proprietary to AMIQ Consulting SRL
+// * and its suppliers and may be covered by Romanian or U.S. and Foreign Patents,
+// * patents in process, and are protected by trade secret or copyright law.
+// * Dissemination of this information or reproduction of this material
+// * is strictly forbidden unless prior written permission is obtained
+// * from AMIQ Consulting SRL.
+// * This file is part of Hardware Verification Course, created and delivered by AMIQ Consulting SRL.
+// * The project can not be copied and/or distributed without the express
+// * permission of AMIQ Consulting SRL.
+// *******************************************************************************
+
+-64bit
++incdir+${PROJ_HOME}
++incdir+${PROJ_HOME}/rtl
++incdir+${PROJ_HOME}/tb
++incdir+${PROJ_HOME}/tb/in
++incdir+${PROJ_HOME}/tb/out
++incdir+${PROJ_HOME}/tb/tests
+-sv
+-gui
+// compile the rtl sources
+$PROJ_HOME/rtl/ex_clk_rst_gen.v
+$PROJ_HOME/rtl/ex_p2s.v
+// compile the testbench sources
+$PROJ_HOME/tb/in/ex_in_pkg.sv
+$PROJ_HOME/tb/out/ex_out_pkg.sv
+$PROJ_HOME/tb/ex_pkg.sv
+$PROJ_HOME/tb/tests/ex_test_pkg.sv
+${PROJ_HOME}/tb/ex_top.sv
+-access rwc
+-linedebug
+-coverage all
+-covoverwrite
+-timescale 1ns/1ps
+-top ex_top
+
+

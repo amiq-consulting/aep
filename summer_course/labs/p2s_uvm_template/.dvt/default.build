@@ -1,0 +1,12 @@
+// Set the root of the UVM library
++dvt_auto_link_root+UVM=/apps/cadence/INCISIV_15.20.006/tools/methodology/UVM/CDNS-1.2/sv/src
+
+// Use Cadence compatibility mode
++dvt_init+ius.irun -work work
+
+// Use Cadence UVM_HOME
+-uvmhome /apps/cadence/INCISIV_15.20.006/tools/methodology/UVM/CDNS-1.2/sv/
+
+// Use the same build options as compile and run options
+-f ${PROJ_HOME}/sim/run.options
+
